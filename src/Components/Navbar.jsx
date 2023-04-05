@@ -14,6 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className={theme.color}>
+      <Link className="navbarBrand" to={home.path}>DH Dentistas</Link>
       <Link to={home.path}>{home.name}</Link>
       <Link to={contacto.path}>{contacto.name}</Link>
       <Link to={favs.path}>{favs.name}</Link>

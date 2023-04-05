@@ -20,7 +20,7 @@ const Favs = () => {
             />
           ))
         ) : (
-          <p>No hay favoritos</p>
+          <p className="favs"> No hay favoritos </p>
         )}
       </div>
     </div>

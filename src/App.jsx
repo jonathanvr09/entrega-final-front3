@@ -7,7 +7,7 @@ import Favs from "./Routes/Favs";
 import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import { links } from "./Components/utils/links";
-import NotFound from "./Pages/404/NotFound";
+import NotFound from "./Components/utils/NotFound";
 
 function App() {
   const { home, contacto, favs, dentista } = links;

@@ -54,20 +54,22 @@ const Form = () => {
   return (
     <div>
       <form>
-        <input
-          className={errors.nombreError ? "inputError" : ""}
-          name="nombre"
-          type="text"
-          onChange={handleInputChange}
-        />
-        {errors.nombreError && <label> ⚠ {errors.nombreError}</label>}
-        <input
-          className={errors.emailError ? "inputError" : ""}
-          name="email"
-          type="email"
-          onChange={handleInputChange}
-        />
-        {errors.emailError && <label> ⚠ {errors.emailError}</label>}
+        <div>
+          <input
+            className={errors.nombreError ? "inputError" : ""}
+            onChange={handleInputChange}
+            placeholder="Ingresar tú nombre" name="nombre" required
+          />
+          {errors.nombreError && <label> ⚠ {errors.nombreError}</label>}
+        </div>
+        <div>
+          <input
+            className={errors.emailError ? "inputError" : ""}
+            onChange={handleInputChange}
+            placeholder="Ingresa tú e-mail" name="email" required
+          />
+          {errors.emailError && <label> ⚠ {errors.emailError}</label>}
+        </div>
         <button onClick={handleSubmit}>Enviar</button>
       </form>
     </div>

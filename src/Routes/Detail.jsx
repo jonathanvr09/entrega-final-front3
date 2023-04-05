@@ -18,7 +18,7 @@ const Detail = () => {
 
   return (
     <div className={theme.color}>
-      <h1>Datos del dentista </h1>
+      <h1> Datos del dentista </h1>
       {odontologo && (
         <table>
           <thead>
