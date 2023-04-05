@@ -1,16 +1,17 @@
-import React from 'react'
-import Form from '../Components/Form'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React from "react";
+import Form from "../Components/Form";
+import { useEstadosGlobalesContext } from "../Components/utils/global.context";
 
 const Contact = () => {
-  return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
-    </div>
-  )
-}
+  const { theme } = useEstadosGlobalesContext();
 
-export default Contact
+  return (
+    <div className={theme.color}>
+      <h1>Acerca de nosotros</h1>
+      <p className="centered">Ingresa tus datos y nos pondremos en contacto contigo</p>
+      <Form />
+    </div>
+  );
+};
+
+export default Contact;
