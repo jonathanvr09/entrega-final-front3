@@ -1,29 +1,37 @@
-import { createContext } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 
-export const initialState = {theme: "", data: []}
+const initialThemeState = { color: "light" };
+const initialOdontologosState = [];
 
-export const ContextGlobal = createContext(undefined);
+const EstadosGlobales = createContext();
 
-export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_LIGHT":
+      return { ...state, color: "light" };
+    case "SET_DARK":
+      return { ...state, color: "dark" };
+    default:
+      return state;
+  }
+};
+const EstadosGlobalesProvider = ({ children }) => {
+  const [odontologos, setOdontologos] = useState(initialOdontologosState);
+  const [theme, dispatchTheme] = useReducer(themeReducer, initialThemeState);
 
-  // function MyComponent() {
-  //   const { theme } = useContext(ThemeContext);
-  
-  //   const content = useMemo(() => {
-  //     return theme === 'dark' ? 'Contenido oscuro' : 'Contenido claro';
-  //   }, [theme]);
-  
-  //   return (
-  //     <div>
-  //       {content}
-  //     </div>
-  //   );
-  // }
-  
+  const value = {
+    odontologos,
+    setOdontologos,
+    theme,
+    dispatchTheme,
+  };
+
   return (
-    <ContextGlobal.Provider value={{}}>
+    <EstadosGlobales.Provider value={value}>
       {children}
-    </ContextGlobal.Provider>
+    </EstadosGlobales.Provider>
   );
 };
+
+export default EstadosGlobalesProvider;
+export const useEstadosGlobalesContext = () => useContext(EstadosGlobales);
