@@ -97,7 +97,7 @@ form{
 }
 
 .favs{
-  padding-bottom: 32.1%;
+  padding-bottom: 22.8%;
 }
 
 .details{
@@ -153,7 +153,6 @@ table{
   z-index: 100;
 }
 
-
 .navbarBrand::first-letter {
   color: #f21d1d;
 }
@@ -172,6 +171,7 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
+
 .dark > a {
   color: white;
 }

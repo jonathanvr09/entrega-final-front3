@@ -39,7 +39,6 @@ const Card = ({ name, username, id }) => {
         <span className={`material-symbols-outlined ${isFav ? "fav" : ""}`}>
           favorite
         </span>
-        {/* {`${!isFav ? "Agregar a favoritos" : "Quitar de favoritos"}`} */}
       </button>
     </div>
   );
