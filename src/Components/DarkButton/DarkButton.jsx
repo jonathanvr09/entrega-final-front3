@@ -1,16 +1,17 @@
 import React from "react";
-import "./DarkModeButton.css";
+import "./DarkButton.css";
 
-const DarkModeButton = ({ onClick }) => {
+const DarkButton = ({ onClick }) => {
+  
   return (
     <div className="toggleDark">
       <input
         type="checkbox"
-        className="checkbox"
-        id="checkbox"
+        className="push-button"
+        id="push-button"
         onClick={onClick}
       />
-      <label htmlFor="checkbox" className="label">
+      <label htmlFor="push-button" className="label">
         <span className="moon">🌑</span>
         <span className="sun">🌕</span>
         <div className="ball" />
@@ -19,4 +20,4 @@ const DarkModeButton = ({ onClick }) => {
   );
 };
 
-export default DarkModeButton;
+export default DarkButton;

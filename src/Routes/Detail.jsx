@@ -42,6 +42,7 @@ const Detail = () => {
       {!odontologo && <h1>Dentista no encontrado</h1>}
     </div>
   );
+  
 };
 
 export default Detail;

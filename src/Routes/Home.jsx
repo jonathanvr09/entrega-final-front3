@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className={theme.color}>
       <h1>Catálogo de dentistas:</h1>
-      <div className="card-grid">
+      <div className="div-card">
         {odontologos.map((odontologo) => (
           <Card
             key={odontologo.id}

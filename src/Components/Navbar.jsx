@@ -2,7 +2,7 @@ import React from "react";
 import { useEstadosGlobalesContext } from "./utils/global.context";
 import { Link } from "react-router-dom";
 import { links } from "./utils/links";
-import DarkModeButton from "./DarkModeButton/DarkModeButton";
+import DarkButton from "./DarkButton/DarkButton";
 
 const Navbar = () => {
   const { theme, dispatchTheme } = useEstadosGlobalesContext();
@@ -20,7 +20,7 @@ const Navbar = () => {
       <Link to={favs.path}>{favs.name}</Link>
       {/* <Link to={dentista.path}>{dentista.name}</Link> */}
       {/* <button onClick={handleTheme}>Change theme</button> */}
-      <DarkModeButton onClick={handleTheme} />
+      <DarkButton onClick={handleTheme} />
     </nav>
   );
 };

@@ -9,7 +9,7 @@ const Favs = () => {
   return (
     <div className={theme.color}>
       <h1>Dentistas Favoritos</h1>
-      <div className="card-grid">
+      <div className="div-card">
         {favs.length ? (
           favs.map((fav) => (
             <Card
@@ -20,11 +20,12 @@ const Favs = () => {
             />
           ))
         ) : (
-          <p className="favs"> No hay favoritos </p>
+          <p className="fav-message"> No hay favoritos </p>
         )}
       </div>
     </div>
   );
+  
 };
 
 export default Favs;

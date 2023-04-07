@@ -1,4 +1,4 @@
-.checkbox {
+.push-button {
   opacity: 0;
   position: absolute;
 }
@@ -27,7 +27,7 @@
   transition: transform 0.2s linear;
 }
   
-.checkbox:checked + .label .ball{
+.push-button:checked + .label .ball{
   transform: translateX(24px);
 }
 

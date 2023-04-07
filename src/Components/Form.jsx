@@ -2,32 +2,33 @@ import { useState } from "react";
 
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
-  const [newUser, setNewUser] = useState({
+  const [addUser, setAddUser] = useState({
     nombre: "",
     email: "",
   });
 
   const [errors, setErrors] = useState({});
-
   const handleInputChange = (e) => {
-    setNewUser({
-      ...newUser,
+
+    setAddUser({
+      ...addUser,
       [e.target.name]: e.target.value,
     });
   };
 
-  const validate = (newUser) => {
+  const validateData = (addUser) => {
+
     const emailRegex =
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
     const error = { nombreError: "", emailError: "" };
 
-    if (!newUser.nombre || newUser.nombre.length < 5) {
+    if (!addUser.nombre || addUser.nombre.length < 5) {
       error.nombreError =
         "El nombre es requerido y debe tener al menos 5 caracteres";
     }
 
-    if (!newUser.email || !emailRegex.test(newUser.email)) {
+    if (!addUser.email || !emailRegex.test(addUser.email)) {
       error.emailError = "El email debe ser válido";
     }
 
@@ -35,20 +36,20 @@ const Form = () => {
       setErrors(error);
       return false;
     }
-
     setErrors({});
     return true;
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const isValid = validate(newUser);
+    const isValid = validateData(addUser);
 
     if (!isValid) {
       return;
     }
-    alert(`Gracias ${newUser.nombre}, te contactaremos cuando antes vía mail`);
+    alert(` ${addUser.nombre}, nos pondremos en contacto contigo vía mail`);
   };
 
   return (
@@ -58,7 +59,7 @@ const Form = () => {
           <input
             className={errors.nombreError ? "inputError" : ""}
             onChange={handleInputChange}
-            placeholder="Ingresar tú nombre" name="nombre" required
+            placeholder="Ingresar nombre" name="nombre" required
           />
           {errors.nombreError && <label> ⚠ {errors.nombreError}</label>}
         </div>
@@ -66,11 +67,11 @@ const Form = () => {
           <input
             className={errors.emailError ? "inputError" : ""}
             onChange={handleInputChange}
-            placeholder="Ingresa tú e-mail" name="email" required
+            placeholder="Ingresar e-mail" name="email" required
           />
           {errors.emailError && <label> ⚠ {errors.emailError}</label>}
         </div>
-        <button onClick={handleSubmit}>Enviar</button>
+        <button onClick={handleSubmit}>Enviar datos</button>
       </form>
     </div>
   );

@@ -1,27 +1,30 @@
-.page_404{
+.error-page{
     padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+    padding-bottom: 20.4%;
 }
 
-.page_404  img{ 
+.error-page img{ 
     width:100%;
 }
 
-.four_zero_four_bg h1{
-    font-size:80px;
+.not-found h1{
+    font-size: 80px;
  }
  
-.four_zero_four_bg h3{
+.font-error h3{
     font-size:80px;
 }
 			 
-.link_404{			 
-    padding: 10px 20px;
+.back-to-home{			 
+    padding: 20px 20px;
     background: #39ac3100;
-    margin: 20px 0;
-    display: inline-block;}
+    margin: 20px;
+    display: inline-block;
+    font-size: 25px
+}
 
-.contant_box_404{ 
-    margin-top:-50px;
+.contant-404{ 
+    margin-top:-80px;
     display: flex;
     flex-direction: column;
     justify-content: center;

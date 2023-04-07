@@ -2,10 +2,9 @@ import { createContext, useContext, useReducer, useState } from "react";
 
 const initialThemeState = { color: "light" };
 const initialOdontologosState = [];
-
 const EstadosGlobales = createContext();
-
 const themeReducer = (state, action) => {
+
   switch (action.type) {
     case "SET_LIGHT":
       return { ...state, color: "light" };
@@ -15,10 +14,10 @@ const themeReducer = (state, action) => {
       return state;
   }
 };
+
 const EstadosGlobalesProvider = ({ children }) => {
   const [odontologos, setOdontologos] = useState(initialOdontologosState);
   const [theme, dispatchTheme] = useReducer(themeReducer, initialThemeState);
-
   const value = {
     odontologos,
     setOdontologos,
