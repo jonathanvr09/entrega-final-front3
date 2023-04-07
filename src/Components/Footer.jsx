@@ -4,6 +4,7 @@ import { useEstadosGlobalesContext } from "./utils/global.context";
 const Footer = () => {
   const { theme } = useEstadosGlobalesContext();
   return (
+    
     <footer className={theme.color}>
       <p>Powered by</p>
       <img src="./images/DH.png" alt="DH-logo" />
@@ -13,6 +14,7 @@ const Footer = () => {
       <img src="./images/ico-whatsapp.png" alt="Whatsapp-logo" class="red-social" />
     </footer>
   );
+
 };
 
 export default Footer;

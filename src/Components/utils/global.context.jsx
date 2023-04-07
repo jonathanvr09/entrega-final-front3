@@ -13,9 +13,13 @@ const themeReducer = (state, action) => {
     default:
       return state;
   }
+  
 };
 
 const EstadosGlobalesProvider = ({ children }) => {
+
+  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+
   const [odontologos, setOdontologos] = useState(initialOdontologosState);
   const [theme, dispatchTheme] = useReducer(themeReducer, initialThemeState);
   const value = {
@@ -30,6 +34,7 @@ const EstadosGlobalesProvider = ({ children }) => {
       {children}
     </EstadosGlobales.Provider>
   );
+
 };
 
 export default EstadosGlobalesProvider;
