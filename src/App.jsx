@@ -10,6 +10,7 @@ import { links } from "./Components/utils/links";
 import NotFound from "./Components/utils/NotFound";
 
 function App() {
+
   const { home, contacto, favs, dentista } = links;
 
   return (
@@ -25,6 +26,7 @@ function App() {
       <Footer />
     </div>
   );
+  
 }
 
 export default App;

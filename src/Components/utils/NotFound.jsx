@@ -4,6 +4,7 @@ import { links } from "./links";
 import "./notFoundStyle.css";
 
 const NotFound = () => {
+  
   const { theme } = useEstadosGlobalesContext();
   return (
     <section className={`error-page ${theme.color}`}>

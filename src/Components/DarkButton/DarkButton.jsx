@@ -18,6 +18,7 @@ const DarkButton = ({ onClick }) => {
       </label>
     </div>
   );
+  
 };
 
 export default DarkButton;

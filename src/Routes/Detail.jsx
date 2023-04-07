@@ -12,6 +12,7 @@ const Detail = () => {
   const [odontologo, setOdontologo] = useState(undefined);
 
   useEffect(() => {
+    
     const o = odontologos.find((odontologo) => {
       return odontologo.id == id;
     });
@@ -19,6 +20,7 @@ const Detail = () => {
   }, [odontologos]);
 
   return (
+  
     <div className={theme.color}>
       <h1> Datos del dentista </h1>
 
